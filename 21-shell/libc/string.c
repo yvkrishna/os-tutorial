@@ -1,4 +1,5 @@
 #include "string.h"
+#include "../drivers/screen.h"
 
 /**
  * K&R implementation
@@ -53,4 +54,21 @@ int strcmp(char s1[], char s2[]) {
         if (s1[i] == '\0') return 0;
     }
     return s1[i] - s2[i];
+}
+
+int substrCheck(char s1[], char s2[]){
+    int str_len1 = strlen(s1), str_len2 = strlen(s2);
+    int i=0,j=0;
+
+     /* A loop to slide pat[] one by one */
+    for (i = 0; i <= str_len2 - str_len1; i++) {
+        /* For current index i, check for pattern match */
+        for (j = 0; j < str_len1; j++)
+            if (s2[i + j] != s1[j])
+                break;
+ 
+        if (j == str_len1)
+            return i;
+    }
+    return -1;
 }

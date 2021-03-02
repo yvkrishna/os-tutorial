@@ -4,9 +4,9 @@
 #include "../cpu/types.h"
 
 #define VIDEO_ADDRESS 0xb8000
-#define MAX_ROWS 25
+#define MAX_ROWS 28
 #define MAX_COLS 80
-#define WHITE_ON_BLACK 0x0f
+#define WHITE_ON_BLACK 0xf0
 #define RED_ON_WHITE 0xf4
 
 /* Screen i/o ports */
